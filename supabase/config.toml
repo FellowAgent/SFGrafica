@@ -1,0 +1,19 @@
+project_id = "odlfkrnrkvruvqxseusr"
+
+[functions.export-schema]
+verify_jwt = true
+
+[functions.update-user]
+verify_jwt = true
+
+[functions.check-pending-emails]
+verify_jwt = false
+
+[functions.check-users]
+verify_jwt = false
+
+[functions.consultar-cnpj]
+verify_jwt = true
+
+[functions.execute-sql-migration]
+verify_jwt = true
