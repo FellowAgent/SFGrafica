@@ -1,0 +1,55 @@
+project_id = "odlfkrnrkvruvqxseusr"
+
+[functions.hello]
+verify_jwt = false
+
+[functions.export-schema]
+verify_jwt = false
+
+[functions.import-schema]
+verify_jwt = false
+
+[functions.update-user]
+verify_jwt = true
+
+[functions.check-pending-emails]
+verify_jwt = false
+
+[functions.check-users]
+verify_jwt = false
+
+[functions.consultar-cnpj]
+verify_jwt = true
+
+[functions.execute-sql-migration]
+verify_jwt = true
+
+[functions.clone-database]
+verify_jwt = false
+
+[functions.reset-destination]
+verify_jwt = false
+
+[functions.schema-diff]
+verify_jwt = false
+
+[functions.detect-drift]
+verify_jwt = false
+
+[functions.deploy-migration]
+verify_jwt = false
+
+[functions.dry-run-migration]
+verify_jwt = false
+
+[functions.schema-version-manager]
+verify_jwt = false
+
+[functions.test-service-role]
+verify_jwt = false
+
+[functions.create-user]
+verify_jwt = true
+
+[functions.delete-user]
+verify_jwt = true
