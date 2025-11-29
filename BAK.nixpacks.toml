@@ -1,0 +1,37 @@
+# Nixpacks Configuration
+# Força Node.js 22.x para compatibilidade com Vite 7
+
+[variables]
+NODE_VERSION = "22"
+NPM_VERSION = "10"
+
+[phases.setup]
+# Especifica explicitamente Node.js 22
+nixPkgs = ['nodejs-22_x', 'npm-10_x']
+nixLibs = ['glibc']
+
+[phases.install]
+cmds = [
+  'echo "======================================"',
+  'echo "📦 VERIFICANDO VERSÕES"',
+  'echo "======================================"',
+  'node --version',
+  'npm --version',
+  'echo "======================================"',
+  'echo "📥 INSTALANDO DEPENDÊNCIAS"',
+  'echo "======================================"',
+  'npm ci --frozen-lockfile'
+]
+
+[phases.build]
+cmds = [
+  'echo "======================================"',
+  'echo "🏗️  BUILDING COM NODE.JS"',
+  'echo "======================================"',
+  'node --version',
+  'echo "======================================"',
+  'npm run build'
+]
+
+[start]
+cmd = 'serve -s dist -l $PORT'

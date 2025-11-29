@@ -1,0 +1,51 @@
+{
+  "services": [
+    {
+      "type": "app",
+      "data": {
+        "projectName": "sf-grafica",
+        "serviceName": "sf-grafica",
+        "source": {
+          "type": "github",
+          "owner": "FellowAgent",
+          "repo": "SFGrafica",
+          "ref": "main",
+          "path": "/",
+          "autoDeploy": true
+        },
+        "build": {
+          "type": "dockerfile",
+          "file": "Dockerfile",
+          "context": "."
+        },
+        "deploy": {
+          "replicas": 1,
+          "command": null,
+          "zeroDowntime": true,
+          "resources": {
+            "memoryReservation": 512,
+            "memoryLimit": 2048,
+            "cpuReservation": 100,
+            "cpuLimit": 500
+          }
+        },
+        "domains": [
+          {
+            "host": "sf-grafica-sf-grafica.anrzbx.easypanel.host",
+            "https": true,
+            "port": 80,
+            "path": "/",
+            "middlewares": [],
+            "certificateResolver": "",
+            "wildcard": false,
+            "internalProtocol": "http"
+          }
+        ],
+        "env": "NODE_ENV=production\nTZ=America/Sao_Paulo",
+        "mounts": [],
+        "ports": [],
+        "basicAuth": []
+      }
+    }
+  ]
+}

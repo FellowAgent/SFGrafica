@@ -1,0 +1,51 @@
+{
+  "services": [
+    {
+      "type": "app",
+      "data": {
+        "projectName": "sf_grafica",
+        "serviceName": "sf_grafica",
+        "source": {
+          "type": "github",
+          "owner": "FellowAgent",
+          "repo": "SFGrafica",
+          "ref": "main",
+          "path": "/",
+          "autoDeploy": false
+        },
+        "build": {
+          "type": "nixpacks",
+          "nixpacksVersion": "1.41.0",
+          "installCommand": "npm ci --frozen-lockfile",
+          "buildCommand": "npm run build",
+          "startCommand": "npm start",
+          "nixPackages": "git curl gcc nodejs-22_x",
+          "env": {
+            "NODE_VERSION": "22",
+            "NIXPACKS_NODE_VERSION": "22",
+            "NIXPACKS_PKGS": "nodejs-22_x",
+            "NODE_ENV": "production"
+          }
+        },
+        "deploy": {
+          "replicas": 1,
+          "command": null,
+          "zeroDowntime": true
+        },
+        "domains": [
+          {
+            "host": "sf-grafica-sf-grafica.anrzbx.easypanel.host",
+            "https": true,
+            "port": 80,
+            "path": "/",
+            "middlewares": [],
+            "certificateResolver": "",
+            "wildcard": false,
+            "internalProtocol": "http"
+          }
+        ]
+      }
+    }
+  ]
+}
+

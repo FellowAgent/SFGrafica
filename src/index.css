@@ -1,0 +1,393 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Fellow CRM Design System - Light Mode */
+    /* Base Colors - 60% White, 30% Dark, 10% Neon Green */
+    --background: 0 0% 100%;
+    --foreground: 0 0% 13%;
+    
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 13%;
+    
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 13%;
+    
+    /* Primary - Neon Green */
+    --primary: 120 100% 50%;
+    --primary-foreground: 0 0% 10%;
+    
+    /* Secondary - Dark Gray #1C2023 */
+    --secondary: 210 7% 13%;
+    --secondary-foreground: 0 0% 100%;
+    
+    /* Muted */
+    --muted: 210 10% 96%;
+    --muted-foreground: 210 4% 48%;
+    
+    /* Accent - Neon Green (#00FF00 / #50FF50) */
+    --accent: 120 100% 50%;
+    --accent-foreground: 0 0% 10%;
+    
+    /* Destructive */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    
+    /* Add button colors */
+    --button-add: 222 13% 16%;
+    --button-add-hover: 0 0% 0%;
+    
+    /* View mode buttons */
+    --view-inactive: 220 14% 96%;
+    --view-active: 220 14% 86%;
+    
+    /* Borders & Inputs */
+    --border: 210 12% 88%;
+    --input: 210 10% 90%;
+    --ring: 120 100% 50%;
+    
+    /* Status Colors - Light tones */
+    --status-finalizado: 142 50% 85%;
+    --status-finalizado-foreground: 0 0% 0%;
+    --status-andamento: 142 45% 88%;
+    --status-andamento-foreground: 0 0% 0%;
+    --status-producao: 217 60% 88%;
+    --status-producao-foreground: 0 0% 0%;
+    --status-novo: 210 20% 88%;
+    --status-novo-foreground: 0 0% 0%;
+    --status-cancelado: 0 55% 88%;
+    --status-cancelado-foreground: 0 0% 0%;
+    --status-entrega: 35 60% 88%;
+    --status-entrega-foreground: 0 0% 0%;
+    
+    /* Radius - More rounded like references */
+    --radius: 1rem;
+    
+    /* Sidebar */
+    --sidebar-background: 210 10% 14%;
+    --sidebar-foreground: 0 0% 100%;
+    --sidebar-primary: 120 100% 50%;
+    --sidebar-primary-foreground: 0 0% 10%;
+    --sidebar-accent: 210 10% 20%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 210 10% 20%;
+    --sidebar-ring: 120 100% 50%;
+    
+    /* Custom Shadow Variables */
+    --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.05), 0 1px 2px 0 rgba(0, 0, 0, 0.04);
+    --shadow-md: 0 4px 8px -2px rgba(0, 0, 0, 0.08), 0 2px 4px -2px rgba(0, 0, 0, 0.04);
+    --shadow-lg: 0 12px 24px -6px rgba(0, 0, 0, 0.1), 0 4px 8px -4px rgba(0, 0, 0, 0.06);
+    --shadow-xl: 0 24px 48px -12px rgba(0, 0, 0, 0.12), 0 8px 16px -8px rgba(0, 0, 0, 0.08);
+    
+    /* Transitions */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .dark {
+    /* Fellow CRM Design System - Dark Mode */
+    --background: 210 10% 8%;
+    --foreground: 0 0% 98%;
+    
+    --card: 210 9% 16%;
+    --card-foreground: 0 0% 98%;
+    
+    --popover: 210 9% 16%;
+    --popover-foreground: 0 0% 98%;
+    
+    /* Primary - Mantém verde neon em ambos os modos */
+    --primary: 120 100% 50%;
+    --primary-foreground: 0 0% 10%;
+    
+    /* Secondary */
+    --secondary: 210 9% 20%;
+    --secondary-foreground: 0 0% 98%;
+    
+    /* Muted */
+    --muted: 210 9% 20%;
+    --muted-foreground: 210 4% 65%;
+    
+    /* Accent - Neon Green stays vibrant */
+    --accent: 120 100% 50%;
+    --accent-foreground: 0 0% 10%;
+    
+    /* Destructive */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    
+    /* Add button colors - dark mode */
+    --button-add: 210 9% 20%;
+    --button-add-hover: 210 9% 24%;
+    
+    /* View mode buttons - dark mode */
+    --view-inactive: 210 9% 20%;
+    --view-active: 210 9% 28%;
+    
+    /* Borders & Inputs */
+    --border: 210 9% 24%;
+    --input: 210 9% 20%;
+    --ring: 120 100% 50%;
+    
+    /* Status Colors - Dark Mode - Light tones */
+    --status-finalizado: 142 50% 85%;
+    --status-finalizado-foreground: 0 0% 0%;
+    --status-andamento: 142 45% 88%;
+    --status-andamento-foreground: 0 0% 0%;
+    --status-producao: 217 60% 88%;
+    --status-producao-foreground: 0 0% 0%;
+    --status-novo: 210 20% 88%;
+    --status-novo-foreground: 0 0% 0%;
+    --status-cancelado: 0 55% 88%;
+    --status-cancelado-foreground: 0 0% 0%;
+    --status-entrega: 35 60% 88%;
+    --status-entrega-foreground: 0 0% 0%;
+    
+    /* Sidebar */
+    --sidebar-background: 210 10% 12%;
+    --sidebar-foreground: 0 0% 98%;
+    --sidebar-primary: 120 100% 50%;
+    --sidebar-primary-foreground: 0 0% 10%;
+    --sidebar-accent: 210 9% 18%;
+    --sidebar-accent-foreground: 0 0% 98%;
+    --sidebar-border: 210 9% 18%;
+    --sidebar-ring: 120 100% 50%;
+    
+    /* Custom Shadow Variables - stronger for dark mode */
+    --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.3), 0 1px 2px 0 rgba(0, 0, 0, 0.2);
+    --shadow-md: 0 4px 8px -2px rgba(0, 0, 0, 0.4), 0 2px 4px -2px rgba(0, 0, 0, 0.3);
+    --shadow-lg: 0 12px 24px -6px rgba(0, 0, 0, 0.5), 0 4px 8px -4px rgba(0, 0, 0, 0.4);
+    --shadow-xl: 0 24px 48px -12px rgba(0, 0, 0, 0.6), 0 8px 16px -8px rgba(0, 0, 0, 0.5);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-feature-settings: 'cv11', 'ss01';
+  }
+  
+  /* Scrollbar styling - High contrast */
+  ::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    @apply bg-muted/50;
+    border-radius: 10px;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    @apply bg-foreground/40 rounded-full;
+    border: 2px solid transparent;
+    background-clip: padding-box;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-foreground/60;
+  }
+}
+
+@layer utilities {
+  /* Spacing - 8px rule */
+  .space-8 {
+    @apply space-y-2;
+  }
+  
+  /* Custom shadows */
+  .shadow-fellow-sm {
+    box-shadow: var(--shadow-sm);
+  }
+  
+  .shadow-fellow-md {
+    box-shadow: var(--shadow-md);
+  }
+  
+  .shadow-fellow-lg {
+    box-shadow: var(--shadow-lg);
+  }
+  
+  .shadow-fellow-xl {
+    box-shadow: var(--shadow-xl);
+  }
+  
+  /* Hover effects for cards - like references */
+  .card-hover {
+    @apply transition-all duration-300 hover:shadow-fellow-lg hover:-translate-y-0.5;
+  }
+  
+  /* Smooth transitions */
+  .transition-smooth {
+    transition: var(--transition-smooth);
+  }
+  
+  /* Green accent glow effect */
+  .accent-glow {
+    box-shadow: 0 0 20px rgba(0, 255, 0, 0.3);
+  }
+  
+  .accent-glow-hover:hover {
+    box-shadow: 0 0 30px rgba(0, 255, 0, 0.5);
+  }
+
+  /* Micro-interactions */
+  @keyframes ripple {
+    0% {
+      transform: scale(0);
+      opacity: 0.6;
+    }
+    100% {
+      transform: scale(4);
+      opacity: 0;
+    }
+  }
+
+  @keyframes pulse-once {
+    0%, 100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(0.95);
+    }
+  }
+
+  @keyframes shake {
+    0%, 100% {
+      transform: translateX(0);
+    }
+    25% {
+      transform: translateX(-4px);
+    }
+    75% {
+      transform: translateX(4px);
+    }
+  }
+
+  @keyframes success-flash {
+    0%, 100% {
+      border-color: hsl(var(--border));
+      box-shadow: none;
+    }
+    50% {
+      border-color: hsl(142 76% 36%);
+      box-shadow: 0 0 0 3px hsl(142 76% 36% / 0.2);
+    }
+  }
+
+  @keyframes error-flash {
+    0%, 100% {
+      border-color: hsl(var(--border));
+      box-shadow: none;
+    }
+    50% {
+      border-color: hsl(var(--destructive));
+      box-shadow: 0 0 0 3px hsl(var(--destructive) / 0.2);
+    }
+  }
+
+  .animate-ripple {
+    animation: ripple 0.6s ease-out;
+  }
+
+  .animate-pulse-once {
+    animation: pulse-once 0.3s ease-in-out;
+  }
+
+  .animate-shake {
+    animation: shake 0.4s ease-in-out;
+  }
+
+  .animate-success-flash {
+    animation: success-flash 0.6s ease-in-out;
+  }
+
+  .animate-error-flash {
+    animation: error-flash 0.6s ease-in-out;
+  }
+
+  /* Toast animations */
+  @keyframes toast-slide-in {
+    0% {
+      transform: translateX(calc(100% + 1rem));
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes toast-slide-out {
+    0% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+    100% {
+      transform: translateX(calc(100% + 1rem));
+      opacity: 0;
+    }
+  }
+
+  @keyframes toast-bounce-in {
+    0% {
+      transform: scale(0.9) translateX(calc(100% + 1rem));
+      opacity: 0;
+    }
+    50% {
+      transform: scale(1.02) translateX(-4px);
+    }
+    100% {
+      transform: scale(1) translateX(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes toast-progress {
+    0% {
+      transform: scaleX(1);
+    }
+    100% {
+      transform: scaleX(0);
+    }
+  }
+
+  @keyframes toast-stack-slide {
+    0% {
+      transform: translateY(-8px);
+      opacity: 0.9;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  .animate-toast-slide-in {
+    animation: toast-slide-in 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .animate-toast-slide-out {
+    animation: toast-slide-out 0.25s cubic-bezier(0.5, 0, 0.75, 0);
+  }
+
+  .animate-toast-bounce-in {
+    animation: toast-bounce-in 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+
+  .animate-toast-progress {
+    animation: toast-progress linear forwards;
+  }
+
+  .animate-toast-stack-slide {
+    animation: toast-stack-slide 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+}
